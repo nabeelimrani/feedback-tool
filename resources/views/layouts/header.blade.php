@@ -61,30 +61,6 @@
         </div>
     </nav>
 
-    <div class="header mt-4">
-        <h2>Welcome, {{ Auth::user()->name }}!</h2>
-        <p>Explore the Feedback Tool and provide valuable feedback.</p>
-    </div>
+    
 
-    <div class="row mt-4">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Submit Feedback</h5>
-                    <p class="card-text">Share your thoughts and suggestions.</p>
-                    <a href="" class="btn btn-primary">Submit Feedback</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Your Feedback</h5>
-                    <p class="card-text">View and manage your submitted feedback.</p>
-                    <a href="" class="btn btn-primary">View Feedback</a>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
