@@ -48,25 +48,41 @@
                                     <ul class="list-group">
                                         @foreach ($feedbackdata->comments as $comment)
                                             <li class="list-group-item m-2">
-                                                <strong>{{ $comment->user->name }}:</strong>
-                                                @if ($comment->mentioned_user_id)
-                                                    <span
-                                                        class="badge badge-info">{{ $comment->mentionedUser->name }}</span>
-                                                @endif
-                                                {{ $comment->body }}
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <strong>{{ $comment->user->name }}:</strong>
+
+                                                        @if ($comment->mentioned_user_id)
+                                                            <span
+                                                                class="badge badge-info">{{ $comment->mentionedUser->name }}</span>
+                                                        @endif
+
+                                                        {!! $comment->body !!}
+                                                    </div>
+
+                                                    <div class="text-muted">
+                                                        {{ $comment->created_at->toFormattedDateString() }},
+                                                        {{ $comment->created_at->shortRelativeDiffForHumans() }}
+                                                    </div>
+                                                </div>
                                             </li>
                                         @endforeach
+
+
                                     </ul>
 
                                     <form method="post" action="{{ route('feedback.comment.store', $feedbackdata->id) }}"
                                         class="mt-3">
                                         @csrf
                                         <div class="form-group m-2">
-                                            <textarea id="commentBody" name="body" class="form-control" rows="3" placeholder="Add a comment" required></textarea>
+                                            <textarea class="form-control trumbowyg-textarea commentBody" name="body"
+                                                placeholder="Add a comment or mention a user with @username" required></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-primary float-right mb-2 mr-2"><i
                                                 class="fas fa-comment"></i> Add Comment</button>
                                     </form>
+
+
                                 </div>
                                 <hr>
                             @endforeach
@@ -79,22 +95,27 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        $(document).ready(function() {
+            $('.commentBody').each(function() {
+                $(this).trumbowyg();
+            });
+        });
+
         $(function() {
             $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
-    <script>
-        $(document).ready(function() {
-            setTimeout(function() {
-                $("#alert").animate({
-                    opacity: 0,
-                    height: 0,
-                    padding: 0
-                }, 1000, function() {
-                    $(this).hide();
-                });
-            }, 1000);
         });
+
+
+
+        setTimeout(function() {
+            $("#alert").animate({
+                opacity: 0,
+                height: 0,
+                padding: 0
+            }, 1000, function() {
+                $(this).hide();
+            });
+        }, 1000);
     </script>
 
 @endsection

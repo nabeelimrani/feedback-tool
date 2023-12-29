@@ -23,6 +23,10 @@
 <script src="{{ asset('frontend/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 
 <script src="{{ asset('frontend/plugins/toastr/toastr.min.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include Trumbowyg JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/trumbowyg@2.25.1/dist/trumbowyg.min.js"></script>
 </body>
 
 </html>

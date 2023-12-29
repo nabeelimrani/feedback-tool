@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Feedback;
 use App\Models\User;
 
@@ -27,8 +28,11 @@ class HomeController extends Controller
         $totaluser = User::count();
         $totalfeedback = Feedback::count();
         $feedbackdata = Feedback::latest()->take(4)->get();
-
+        $totalcomment = Comment::count();
+        $commentdata = Comment::latest()->take(4)->get();
         return view('components.home')
+            ->with('commentdata', $commentdata)
+            ->with('totalcomment', $totalcomment)
             ->with('feedbackdata', $feedbackdata)
             ->with('totalfeedback', $totalfeedback)
             ->with('totaluser', $totaluser);
