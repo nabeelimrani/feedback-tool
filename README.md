@@ -82,14 +82,53 @@ Before you begin, ensure you have the following prerequisites installed:
    - **Email:** nabeelemraane09@gmail.com
    - **Password:** admin123
 
-### Configuration
-
-If your project requires additional configuration, provide information on how users can set up configuration files or environment variables.
-
 ### Usage
 
-Describe how to run the project locally:
+This command to run the project locally:
 
 ```bash
 php artisan serve
+
+### Submitting Feedback
+
+1. After running the project locally with `php artisan serve`, visit [http://localhost:8000](http://localhost:8000) in your web browser.
+
+2. Click on the "Submit Feedback" menu.
+
+3. Fill in the feedback form with your thoughts, suggestions, or issues.
+
+4. Click the "Submit" button to submit your feedback.
+
+5. A success message will be displayed, indicating the successful submission.
+
+### Viewing Feedback and Comments
+
+1. After submitting feedback, click on the "View Feedback" menu.
+
+2. You will see a list of your submitted feedback.
+
+3. Click on a specific feedback entry to view comments and additional details.
+
+4. To add a new comment:
+   - Enter your comment in the comment box.
+   - Click the "Submit Comment" button.
+
+5. Mentioning Users in Comments:
+   - To mention a user, use the `@username` format in your comment.
+   - The mentioned user will receive a notification about the mention.
+
+6. View the feedback and comments for an interactive and collaborative experience!
+
+## Contributing
+
+If you would like to contribute to the project, follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Troubleshooting
+
+Include common issues users might face and how to troubleshoot them.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md) - see the [LICENSE.md](LICENSE.md) file for details.
+
 
