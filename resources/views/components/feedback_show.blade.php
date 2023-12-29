@@ -28,56 +28,62 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        @foreach ($feedback as $feedbackdata)
-                            <div class="card mb-3">
-                                <div class="card-header">
-                                    Feedback by {{ $feedbackdata->user_name }}
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $feedbackdata->title }}</h5>
-                                    <p class="card-text">{{ $feedbackdata->description }}</p>
-                                    <p class="card-text"><strong>Category:</strong> {{ $feedbackdata->category }}</p>
-                                </div>
-                                <div class="card-footer text-muted">
-                                    <button class="btn btn-secondary btn-sm" data-toggle="modal"
-                                        data-target="#detailModal{{ $feedbackdata->id }}">Detail</button>
-                                </div>
-
-                                <!-- Comment Section -->
-                                <ul class="list-group">
-                                    @foreach ($feedbackdata->comments as $comment)
-                                        <li class="list-group-item">
-                                            {{ $comment->user->name }}:
-
-                                            @if ($comment->mentioned_user_id)
-                                                <span class="badge badge-info">@{{ $comment - > mentionedUser - > name }}</span>
-                                            @endif
-
-                                            {{ $comment->body }}
-                                        </li>
-                                    @endforeach
-                                </ul>
-
-                                <!-- Comment Form -->
-                                <form method="post" action="{{ route('feedback.comment.store', $feedbackdata->id) }}"
-                                    class="mt-3">
-                                    @csrf
-                                    <div class="form-group">
-                                        <textarea name="body" class="form-control" rows="3" placeholder="Add a comment" required></textarea>
+                        @if (isset($feedback))
+                            @foreach ($feedback as $feedbackdata)
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        Feedback by {{ $feedbackdata->user_name }}
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Add Comment</button>
-                                </form>
-                            </div>
-                        @endforeach
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $feedbackdata->title }}</h5>
+                                        <p class="card-text">{{ $feedbackdata->description }}</p>
+                                        <p class="card-text"><strong>Category:</strong> {{ $feedbackdata->category }}</p>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <button class="btn btn-secondary btn-sm" data-toggle="modal"
+                                            data-target="#detailModal{{ $feedbackdata->id }}">Detail</button>
+                                    </div>
+
+                                    <!-- Comment Section -->
+                                    <!-- Comments Section -->
+                                    <ul class="list-group">
+                                        @foreach ($feedbackdata->comments as $comment)
+                                            <li class="list-group-item">
+                                                {{ $comment->user->name }}:
+
+                                                @if ($comment->mentioned_user_id)
+                                                    <span
+                                                        class="badge badge-info">{{ $comment->mentionedUser->name }}</span>
+                                                @endif
+
+                                                {{ $comment->body }}
+                                            </li>
+                                        @endforeach
+                                    </ul>
+
+                                    <!-- Comment Form -->
+                                    <form method="post" action="{{ route('feedback.comment.store', $feedbackdata->id) }}"
+                                        class="mt-3">
+                                        @csrf
+                                        <div class="form-group">
+                                            <textarea name="body" class="form-control" rows="3" placeholder="Add a comment" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Add Comment</button>
+                                    </form>
+
+                                </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Pagination Links -->
-        <div class="float-right align-right mr-3 p-2">
-            {{ $feedback->links('pagination::bootstrap-5') }}
-        </div>
+        @if (isset($feedback))
+            <div class="float-right align-right mr-3 p-2">
+                {{ $feedback->links('pagination::bootstrap-5') }}
+            </div>
+        @endif
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

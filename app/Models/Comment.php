@@ -29,4 +29,5 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class, 'mentioned_user_id');
     }
+
 }
