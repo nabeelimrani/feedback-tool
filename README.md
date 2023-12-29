@@ -1,6 +1,6 @@
 #  Feedback Tool
 
-<p align="center"><a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Ffreepngimg.com%2Fpng%2F12278-feedback-png-clipart&psig=AOvVaw08xduXK--y4cXyUa4rGiLj&ust=1703969656493000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCND5--LDtYMDFQAAAAAdAAAAABAD" target="_blank"><img src="[https://your-feedback-tool-logo-url.com](https://www.google.com/url?sa=i&url=https%3A%2F%2Ffreepngimg.com%2Fpng%2F12278-feedback-png-clipart&psig=AOvVaw08xduXK--y4cXyUa4rGiLj&ust=1703969656493000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCND5--LDtYMDFQAAAAAdAAAAABAD)" width="400" alt="Feedback Tool "></a></p>
+<p align="center"><a href="https://freepngimg.com/download/feedback/8-2-feedback-png-clipart.png" target="_blank"><img src="https://freepngimg.com/download/feedback/8-2-feedback-png-clipart.png" width="400" alt="Feedback Tool "></a></p>
 
 <p align="center">
 <a href="https://github.com/yourusername/your-feedback-tool/actions"><img src="https://github.com/yourusername/your-feedback-tool/workflows/tests/badge.svg" alt="Build Status"></a>
