@@ -9,6 +9,7 @@
     <strong>Copyright &copy; 2023-2024 <a href="{{ url('/home') }}">Feedback Tool</a>.</strong> All rights reserved.
 </footer>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 <script src="{{ asset('frontend/plugins/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('frontend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('frontend/dist/js/adminlte.min.js') }}"></script>

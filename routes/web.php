@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FeedbackController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::get('/feedback/show', [FeedbackController::class, 'show'])->name('feedback.show');
+Route::post('/feedback/submit', [FeedbackController::class, 'submit'])->name('submit');
+Route::post('/feedback/{feedbackId}/comment/store', [CommentController::class, 'store'])
+    ->name('feedback.comment.store');

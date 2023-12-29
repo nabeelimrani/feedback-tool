@@ -31,7 +31,9 @@
                         <!-- Card 1: Total Feedbacks -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>100</h3>
+                                @if (isset($totalfeedback))
+                                    <h3>{{ $totalfeedback }}</h3>
+                                @endif
                                 <p>Total Feedbacks</p>
                             </div>
                             <div class="icon">
@@ -61,7 +63,9 @@
                         <!-- Card 3: Total Users -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>{{ $totaluser }}</h3>
+                                @if (isset($totaluser))
+                                    <h3>{{ $totaluser }}</h3>
+                                @endif
                                 <p>Total Users</p>
                             </div>
                             <div class="icon">
@@ -77,7 +81,7 @@
                         <!-- Card 5: Latest Members -->
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Recently Comments</h3>
+                                <h3 class="card-title">Recently Feedback</h3>
 
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -88,21 +92,35 @@
 
                             <div class="card-body p-0">
                                 <ul class="products-list product-list-in-card pl-2 pr-2">
-                                    <li class="item">
-                                        <div class="product-img">
-                                            <img src="{{ asset('frontend/dist/img/images.jpg') }}" alt="Product Image"
-                                                class="img-size-50">
+                                    @if (count($feedbackdata) > 0)
+                                        @foreach ($feedbackdata as $data)
+                                            <li class="item">
+                                                <div class="product-img">
+                                                    <img src="{{ asset('frontend/dist/img/avatar.png') }}"
+                                                        alt="Product Image" class="img-size-50">
+                                                </div>
+                                                <div class="product-info">
+                                                    <a href="javascript:void(0)" class="product-title">
+                                                        <span
+                                                            class="badge badge-warning float-right">{{ $data->created_at->shortRelativeDiffForHumans() }}</span>
+                                                        {{ $data->title }} <!-- Display Feedback Title -->
+                                                    </a>
+                                                    <span class="product-description">
+                                                        <strong>{{ Str::limit($data->description, 100) }}</strong>
+                                                        <!-- Display Short Description -->
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                        <div class="card-footer text-center">
+                                            <a href="" class="uppercase">View All Feedback</a>
                                         </div>
-                                        <div class="product-info">
-                                            <a href="javascript:void(0)" class="product-title">
-                                                <span class="badge badge-warning float-right">PKR-/-</span></a>
-                                            <span class="product-description">
-                                                <strong>Total-Size: 5 cm</strong>
-                                            </span>
-                                        </div>
-                                    </li>
+                                    @else
+                                        <b class="mt-3 p-2">No latest feedback available.</b>
+                                    @endif
                                 </ul>
                             </div>
+
                         </div>
                     </div>
                     <div class="col-md-6">

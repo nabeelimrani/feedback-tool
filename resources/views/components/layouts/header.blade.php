@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/plugins/toastr/toastr.min.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.min.css">
     <style>
     </style>
 </head>
@@ -107,8 +107,8 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href=""
-                                        class="nav-link {{ Request::is('customer/view') ? 'active' : ' ' }}">
+                                    <a href="{{ route('feedback.show') }}"
+                                        class="nav-link {{ Request::is('feedback/show') ? 'active' : ' ' }}">
                                         <p>View Feedback</p>
                                     </a>
                                 </li>
