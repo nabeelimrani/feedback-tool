@@ -42,7 +42,7 @@ Before you begin, ensure you have the following prerequisites installed:
 2. Navigate to the project directory:
 
     ```bash
-    cd your-feedback-tool
+    cd feedback-tool
     ```
 
 3. Install the required dependencies:
@@ -75,7 +75,12 @@ Before you begin, ensure you have the following prerequisites installed:
 
     This will create the necessary database tables.
 
-7. [Additional installation steps, if any]
+7. **Login Credentials:**
+
+   Use the following login credentials to access the application:
+
+   - **Email:** nabeelemraane09@gmail.com
+   - **Password:** admin123
 
 ### Configuration
 
