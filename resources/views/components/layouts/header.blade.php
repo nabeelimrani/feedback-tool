@@ -116,16 +116,16 @@
                                 <li class="nav-item">
                                     <a href=""
                                         class="nav-link {{ Request::is('customer') ? 'active' : ' ' }}">
-                                        <p>Create Customer</p>
+                                        <p>Submit Feedback</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href=""
                                         class="nav-link {{ Request::is('customer/view') ? 'active' : ' ' }}">
-                                        <p>View Customer</p>
+                                        <p>View Feedback</p>
                                     </a>
                                 </li>
-                                <hr>
+
 
                             </ul>
                         </li>

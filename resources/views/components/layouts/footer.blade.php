@@ -1,11 +1,12 @@
 <footer class="main-footer">
     <div class="float-right d-none d-sm-inline">
-        <a href="https://www.facebook.com/yourpage" target="_blank"><i class="fab fa-facebook"></i></a>&nbsp;&nbsp;
-        <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+        <a href="https://www.linkedin.com/in/nabeel-mehdi-imrani-070498230/" target="_blank"><i
+                class="fab fa-linkedin"></i></a>&nbsp;&nbsp;
+        <a href="https://github.com/nabeelimrani" target="_blank"><i class="fab fa-github"></i></a>&nbsp;&nbsp;
         <a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
 
-    <strong>Copyright &copy; 2022-2024 <a href="{{ url('/home') }}">HN Wedding Shop</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2023-2024 <a href="{{ url('/home') }}">Feedback Tool</a>.</strong> All rights reserved.
 </footer>
 </div>
 <script src="{{ asset('frontend/plugins/jquery/jquery.min.js') }}"></script>
