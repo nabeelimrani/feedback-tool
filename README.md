@@ -24,9 +24,15 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 ### Prerequisites
 
-Make sure you have the following installed:
+Before you begin, ensure you have the following prerequisites installed:
 
-- [List of prerequisites]
+- [Node.js](https://nodejs.org/) - Version 14.0.0 or higher
+- [npm](https://www.npmjs.com/) - Node package manager (usually comes with Node.js installation)
+- [Git](https://git-scm.com/) - Version control system for cloning the project
+- [MongoDB](https://www.mongodb.com/) - Database system (if applicable)
+- [Docker](https://www.docker.com/) - Containerization platform (if applicable)
+- [Any other specific software or tool required by your project]
+
 
 ### Installation
 
