@@ -2,7 +2,8 @@
 
 <p align="center"><a href="https://freepngimg.com/download/feedback/8-2-feedback-png-clipart.png" target="_blank"><img src="https://freepngimg.com/download/feedback/8-2-feedback-png-clipart.png" width="60" alt="Feedback Tool "></a></p>
 
-<a href="https://www.linkedin.com/in/yourusername/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-YourName-blue" alt="LinkedIn"></a>
+<p align="center">
+    <a href="https://www.linkedin.com/in/yourusername/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-YourName-blue" alt="LinkedIn"></a></p>
 ## About Feedback Tool
 
  Feedback Tool is a [brief description of what your tool does and its purpose].
