@@ -41,9 +41,10 @@
                                         </p>
                                         <p class="card-text"><strong>Category:</strong> {{ $feedbackdata->category }}</p>
                                     </div>
-                                    <div class="card-footer text-muted"></div>
-                                    <strong>Comments:</strong>
-                                    <!-- Comment Section -->
+                                    <div class="card-footer text-muted">
+                                        <strong>Comments:</strong>
+                                    </div>
+
                                     <ul class="list-group">
                                         @foreach ($feedbackdata->comments as $comment)
                                             <li class="list-group-item m-2">
@@ -57,14 +58,13 @@
                                         @endforeach
                                     </ul>
 
-                                    <!-- Comment Form -->
                                     <form method="post" action="{{ route('feedback.comment.store', $feedbackdata->id) }}"
                                         class="mt-3">
                                         @csrf
                                         <div class="form-group m-2">
                                             <textarea id="commentBody" name="body" class="form-control" rows="3" placeholder="Add a comment" required></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary float-right mb-2"><i
+                                        <button type="submit" class="btn btn-primary float-right mb-2 mr-2"><i
                                                 class="fas fa-comment"></i> Add Comment</button>
                                     </form>
                                 </div>
@@ -75,7 +75,6 @@
                 </div>
             </div>
         </section>
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -95,29 +94,6 @@
                     $(this).hide();
                 });
             }, 1000);
-        });
-
-        $(document).ready(function() {
-            // Replace 'fetchUsernames' with your actual endpoint to fetch usernames
-            const usernames = ['user1', 'user2', 'user3']; // Replace with actual usernames
-
-            // Initialize Typeahead
-            $('#commentBody').typeahead({
-                source: usernames,
-                matcher: function(item) {
-                    const query = this.query.toLowerCase();
-                    return item.toLowerCase().includes(query);
-                },
-                highlighter: function(item) {
-                    const query = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&');
-                    return item.replace(new RegExp('(' + query + ')', 'ig'), function($1, match) {
-                        return '<strong>' + match + '</strong>';
-                    });
-                },
-                updater: function(item) {
-                    return item + ' ';
-                },
-            });
         });
     </script>
 

@@ -25,10 +25,9 @@
 
         <section class="content">
             <div class="container-fluid">
-                <!-- Upper Row: 3 Cards -->
+
                 <div class="row">
                     <div class="col-lg-4 col-12">
-                        <!-- Card 1: Total Feedbacks -->
                         <div class="small-box bg-info">
                             <div class="inner">
                                 @if (isset($totalfeedback))
@@ -45,7 +44,6 @@
                     </div>
 
                     <div class="col-lg-4 col-12">
-                        <!-- Card 2: Total Comments -->
                         <div class="small-box bg-success">
                             <div class="inner">
                                 <h3>50</h3>
@@ -60,7 +58,6 @@
                     </div>
 
                     <div class="col-lg-4 col-12">
-                        <!-- Card 3: Total Users -->
                         <div class="small-box bg-warning">
                             <div class="inner">
                                 @if (isset($totaluser))
@@ -76,13 +73,12 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- Card 5: Latest Members -->
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Recently Feedback</h3>
-
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                         <i class="fas fa-minus"></i>
@@ -103,15 +99,12 @@
                                                     <a href="javascript:void(0)" class="product-title">
                                                         <span
                                                             class="badge badge-warning float-right">{{ $data->created_at->shortRelativeDiffForHumans() }}</span>
-                                                        {{ $data->title }} <!-- Display Feedback Title -->
+                                                        {{ $data->title }}
                                                     </a>
                                                     <span class="product-description" data-toggle="tooltip"
                                                         data-placement="top" title="{{ $data->description }}">
                                                         <strong>{{ Str::limit($data->description, 50) }}</strong>
-                                                        <!-- Display Short Description -->
                                                     </span>
-
-
                                                 </div>
                                             </li>
                                         @endforeach
@@ -123,15 +116,13 @@
                                     @endif
                                 </ul>
                             </div>
-
                         </div>
                     </div>
+
                     <div class="col-md-6">
-                        <!-- Card 5: Latest Members -->
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Recently Feedback</h3>
-
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                         <i class="fas fa-minus"></i>
@@ -162,6 +153,7 @@
             </div>
         </section>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function() {

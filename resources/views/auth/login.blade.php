@@ -5,7 +5,6 @@
         <div class="row justify-content-start">
             <div class="col-md-5">
                 <div class="login-logo">
-
                     <a href="{{ url('/login') }}"><b>Feedback </b> Tool</a>
                     <img src="{{ asset('icon/feedback.png') }}" width=50>
                 </div>
@@ -33,7 +32,6 @@
                             </div>
 
                             <div class="input-group mb-3">
-
                                 <input id="password" placeholder="Password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password" required
                                     autocomplete="current-password">
@@ -50,13 +48,12 @@
                             </div>
 
                             <div class="row">
-
-
                                 <div class="d-grid">
                                     <button type="submit" class="btn btn-primary btn-block">
                                         <i class="fa fa-sign-in-alt"></i> Sign In
                                     </button>
                                 </div>
+                            </div>
                         </form>
 
                         @if (Route::has('password.request'))
@@ -71,8 +68,6 @@
                                 <i class="fas fa-user-plus"></i> Register a new membership
                             </a>
                         </p>
-
-
                     </div>
                 </div>
             </div>

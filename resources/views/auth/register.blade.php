@@ -16,7 +16,6 @@
                             @csrf
 
                             <div class="mb-3">
-
                                 <div class="input-group">
                                     <input id="name" type="text" placeholder="Enter your full name"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
@@ -33,7 +32,6 @@
                             </div>
 
                             <div class="mb-3">
-
                                 <div class="input-group">
                                     <input id="email" placeholder="Enter your email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
@@ -50,7 +48,6 @@
                             </div>
 
                             <div class="mb-3">
-
                                 <div class="input-group">
                                     <input id="password" placeholder="Enter your password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
@@ -67,7 +64,6 @@
                             </div>
 
                             <div class="mb-3">
-
                                 <div class="input-group">
                                     <input id="password-confirm" placeholder="Repeat your password" type="password"
                                         class="form-control" name="password_confirmation" required

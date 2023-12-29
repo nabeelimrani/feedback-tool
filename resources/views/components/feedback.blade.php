@@ -2,9 +2,11 @@
 
 @section('main-section')
     @push('title')
-        <title>Submit Feedback - Feedback Tool </title>
+        <title>Submit Feedback - Feedback Tool</title>
     @endpush
+
     <div class="content-wrapper">
+
         <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -69,13 +71,11 @@
                                             <option value="Feature Request">Feature Request</option>
                                             <option value="Improvements">Improvements</option>
                                             <option value="General Feedback">General Feedback</option>
-
                                         </select>
                                         @error('category')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -84,22 +84,20 @@
                         </div>
                     </div>
                 </div>
-                @if (session('success'))
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success!',
-                                text: '{{ session('success') }}',
-                            });
-
-                        });
-                    </script>
-                @endif
             </div>
         </section>
     </div>
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: '{{ session('success') }}',
+                });
+            });
+        </script>
+    @endif
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
