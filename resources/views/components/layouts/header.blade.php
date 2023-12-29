@@ -9,31 +9,21 @@
 
     <link rel="icon" href="{{ asset('icon/feedback.png') }}">
     <link rel="stylesheet" href="{{ asset('frontend/plugins/fontawesome-free/css/all.min.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('frontend/dist/css/adminlte.min.css') }}"> -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="{{ asset('fontawesome/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-
     <link rel="stylesheet" href="{{ asset('frontend/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-
     <link rel="stylesheet" href="{{ asset('frontend/plugins/jqvmap/jqvmap.min.css') }}">
-    <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('frontend/dist/css/adminlte.min.css') }}">
-    <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('frontend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-    <!-- Daterange picker -->
     <link rel="stylesheet" href="{{ asset('frontend/plugins/daterangepicker/daterangepicker.css') }}">
-    <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('frontend/plugins/summernote/summernote-bs4.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
-    <!-- Toastr -->
     <link rel="stylesheet" href="{{ asset('frontend/plugins/toastr/toastr.min.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <style>
-
-
     </style>
 </head>
 
@@ -53,7 +43,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fas fa-power-off"></i> <!-- Font Awesome power-off icon -->
+                        <i class="fas fa-power-off"></i>
                         <p>Logout</p>
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -61,7 +51,6 @@
                     </form>
                 </li>
             </ul>
-
         </nav>
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="{{ route('home') }}" class="brand-link d-flex align-items-center">
@@ -69,8 +58,6 @@
                     class="img-fluid img-circle" width="50" height="50">
                 <b class="brand-text font-weight-bold ml-3" style="font-size: 22px;">Feedback Tool</b>
             </a>
-
-
             <div class="sidebar">
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
@@ -114,8 +101,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href=""
-                                        class="nav-link {{ Request::is('customer') ? 'active' : ' ' }}">
+                                    <a href="{{ route('feedback') }}"
+                                        class="nav-link {{ Request::is('feedback') ? 'active' : ' ' }}">
                                         <p>Submit Feedback</p>
                                     </a>
                                 </li>
@@ -125,40 +112,34 @@
                                         <p>View Feedback</p>
                                     </a>
                                 </li>
-
-
                             </ul>
                         </li>
                     </ul>
-                    <!-- setting -->
-
-
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="#" class="nav-link ">
+                                <i class="nav-icon fas fa-cog"></i>
+                                <p>
+                                    Setting
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a class="nav-link {{ Request::is('logout*') ? 'active' : ' ' }}"
+                                        href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <p>Logout</p>
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </nav>
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false">
-                    <li class="nav-item has-treeview menu-open">
-                        <a href="#" class="nav-link ">
-                            <i class="nav-icon fas fa-cog"></i>
-                            <p>
-                                Setting
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-
-                            <li class="nav-item">
-                                <a class="nav-link {{ Request::is('logout*') ? 'active' : ' ' }}"
-                                    href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <p>Logout</p>
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    class="d-none">
-                                    @csrf
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
             </div>
         </aside>
