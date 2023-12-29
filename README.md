@@ -88,7 +88,7 @@ This command to run the project locally:
 
 ```bash
 php artisan serve
-
+```
 ### Submitting Feedback
 
 1. After running the project locally with `php artisan serve`, visit [http://localhost:8000](http://localhost:8000) in your web browser.
@@ -103,11 +103,11 @@ php artisan serve
 
 ### Viewing Feedback and Comments
 
-1. After submitting feedback, click on the "View Feedback" menu.
+1. After submitting feedback, click on the "View Feedback" button.
 
 2. You will see a list of your submitted feedback.
 
-3. Click on a specific feedback entry to view comments and additional details.
+3. View on a feedback entry and view comments .
 
 4. To add a new comment:
    - Enter your comment in the comment box.
@@ -115,20 +115,5 @@ php artisan serve
 
 5. Mentioning Users in Comments:
    - To mention a user, use the `@username` format in your comment.
-   - The mentioned user will receive a notification about the mention.
 
 6. View the feedback and comments for an interactive and collaborative experience!
-
-## Contributing
-
-If you would like to contribute to the project, follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Troubleshooting
-
-Include common issues users might face and how to troubleshoot them.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE.md) - see the [LICENSE.md](LICENSE.md) file for details.
-
-
