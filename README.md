@@ -1,6 +1,6 @@
 #  Feedback Tool
 
-<p align="center"><a href="https://freepngimg.com/download/feedback/8-2-feedback-png-clipart.png" target="_blank"><img src="https://freepngimg.com/download/feedback/8-2-feedback-png-clipart.png" width="200" alt="Feedback Tool "></a></p>
+<p align="center"><a href="https://freepngimg.com/download/feedback/8-2-feedback-png-clipart.png" target="_blank"><img src="https://freepngimg.com/download/feedback/8-2-feedback-png-clipart.png" width="50" alt="Feedback Tool "></a></p>
 
 <p align="center">
 <a href="https://github.com/yourusername/your-feedback-tool/actions"><img src="https://github.com/yourusername/your-feedback-tool/workflows/tests/badge.svg" alt="Build Status"></a>
