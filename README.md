@@ -33,9 +33,58 @@ Before you begin, ensure you have the following prerequisites installed:
 
 ### Installation
 
-Clone the repository and install dependencies:
+1. Clone the repository to your local machine:
+
+    ```bash
+    git clone https://github.com/yourusername/your-feedback-tool.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd your-feedback-tool
+    ```
+
+3. Install the required dependencies:
+
+    ```bash
+    composer install
+    ```
+
+    This command will install the PHP dependencies for your Laravel project.
+
+4. Create a copy of the `.env.example` file and rename it to `.env`:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    Update the `.env` file with your database configuration and any other necessary settings.
+
+5. Generate the application key:
+
+    ```bash
+    php artisan key:generate
+    ```
+
+6. Run database migrations:
+
+    ```bash
+    php artisan migrate
+    ```
+
+    This will create the necessary database tables.
+
+7. [Additional installation steps, if any]
+
+### Configuration
+
+If your project requires additional configuration, provide information on how users can set up configuration files or environment variables.
+
+### Usage
+
+Describe how to run the project locally:
 
 ```bash
-git clone https://github.com/yourusername/your-feedback-tool.git
-cd your-feedback-tool
-# Additional installation steps, if any
+php artisan serve
+
