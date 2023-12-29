@@ -4,6 +4,7 @@
     @push('title')
         <title>View Feedback - Feedback Tool</title>
     @endpush
+
     <div class="content-wrapper">
         <section class="content-header">
             <div class="container-fluid">
@@ -31,31 +32,26 @@
                         @if (isset($feedback))
                             @foreach ($feedback as $feedbackdata)
                                 <div class="card mb-3">
-                                    <div class="card-header">
-                                        Feedback by {{ $feedbackdata->user_name }}
+                                    <div class="card-header bg-primary text-white">
+                                        Feedback by: <strong>{{ $feedbackdata->user_name }}</strong>
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ $feedbackdata->title }}</h5>
-                                        <p class="card-text">{{ $feedbackdata->description }}</p>
+                                        <h5 class="card-title"><strong>Title:</strong> {{ $feedbackdata->title }}</h5>
+                                        <p class="card-text"><strong>Description:</strong> {{ $feedbackdata->description }}
+                                        </p>
                                         <p class="card-text"><strong>Category:</strong> {{ $feedbackdata->category }}</p>
                                     </div>
-                                    <div class="card-footer text-muted">
-                                        <button class="btn btn-secondary btn-sm" data-toggle="modal"
-                                            data-target="#detailModal{{ $feedbackdata->id }}">Detail</button>
-                                    </div>
-
+                                    <div class="card-footer text-muted"></div>
+                                    <strong>Comments:</strong>
                                     <!-- Comment Section -->
-                                    <!-- Comments Section -->
                                     <ul class="list-group">
                                         @foreach ($feedbackdata->comments as $comment)
-                                            <li class="list-group-item">
-                                                {{ $comment->user->name }}:
-
+                                            <li class="list-group-item m-2">
+                                                <strong>{{ $comment->user->name }}:</strong>
                                                 @if ($comment->mentioned_user_id)
                                                     <span
                                                         class="badge badge-info">{{ $comment->mentionedUser->name }}</span>
                                                 @endif
-
                                                 {{ $comment->body }}
                                             </li>
                                         @endforeach
@@ -65,13 +61,14 @@
                                     <form method="post" action="{{ route('feedback.comment.store', $feedbackdata->id) }}"
                                         class="mt-3">
                                         @csrf
-                                        <div class="form-group">
-                                            <textarea name="body" class="form-control" rows="3" placeholder="Add a comment" required></textarea>
+                                        <div class="form-group m-2">
+                                            <textarea id="commentBody" name="body" class="form-control" rows="3" placeholder="Add a comment" required></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Add Comment</button>
+                                        <button type="submit" class="btn btn-primary float-right mb-2"><i
+                                                class="fas fa-comment"></i> Add Comment</button>
                                     </form>
-
                                 </div>
+                                <hr>
                             @endforeach
                         @endif
                     </div>
@@ -79,11 +76,6 @@
             </div>
         </section>
 
-        @if (isset($feedback))
-            <div class="float-right align-right mr-3 p-2">
-                {{ $feedback->links('pagination::bootstrap-5') }}
-            </div>
-        @endif
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -104,5 +96,29 @@
                 });
             }, 1000);
         });
+
+        $(document).ready(function() {
+            // Replace 'fetchUsernames' with your actual endpoint to fetch usernames
+            const usernames = ['user1', 'user2', 'user3']; // Replace with actual usernames
+
+            // Initialize Typeahead
+            $('#commentBody').typeahead({
+                source: usernames,
+                matcher: function(item) {
+                    const query = this.query.toLowerCase();
+                    return item.toLowerCase().includes(query);
+                },
+                highlighter: function(item) {
+                    const query = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&');
+                    return item.replace(new RegExp('(' + query + ')', 'ig'), function($1, match) {
+                        return '<strong>' + match + '</strong>';
+                    });
+                },
+                updater: function(item) {
+                    return item + ' ';
+                },
+            });
+        });
     </script>
+
 @endsection

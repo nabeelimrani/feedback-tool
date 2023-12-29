@@ -105,15 +105,18 @@
                                                             class="badge badge-warning float-right">{{ $data->created_at->shortRelativeDiffForHumans() }}</span>
                                                         {{ $data->title }} <!-- Display Feedback Title -->
                                                     </a>
-                                                    <span class="product-description">
-                                                        <strong>{{ Str::limit($data->description, 100) }}</strong>
+                                                    <span class="product-description" data-toggle="tooltip"
+                                                        data-placement="top" title="{{ $data->description }}">
+                                                        <strong>{{ Str::limit($data->description, 50) }}</strong>
                                                         <!-- Display Short Description -->
                                                     </span>
+
+
                                                 </div>
                                             </li>
                                         @endforeach
                                         <div class="card-footer text-center">
-                                            <a href="" class="uppercase">View All Feedback</a>
+                                            <a href="{{ route('feedback.show') }}" class="uppercase">View All Feedback</a>
                                         </div>
                                     @else
                                         <b class="mt-3 p-2">No latest feedback available.</b>
@@ -159,4 +162,10 @@
             </div>
         </section>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 @endsection

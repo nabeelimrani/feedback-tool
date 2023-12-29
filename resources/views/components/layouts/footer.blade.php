@@ -3,7 +3,7 @@
         <a href="https://www.linkedin.com/in/nabeel-mehdi-imrani-070498230/" target="_blank"><i
                 class="fab fa-linkedin"></i></a>&nbsp;&nbsp;
         <a href="https://github.com/nabeelimrani" target="_blank"><i class="fab fa-github"></i></a>&nbsp;&nbsp;
-        <a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.instagram.com/billu_badshaw/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
 
     <strong>Copyright &copy; 2023-2024 <a href="{{ url('/home') }}">Feedback Tool</a>.</strong> All rights reserved.

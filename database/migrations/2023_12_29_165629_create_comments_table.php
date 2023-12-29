@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('feedback_id');
             $table->text('body');
             $table->unsignedBigInteger('mentioned_user_id')->nullable();
+
             $table->timestamps();
 
             $table->foreign('mentioned_user_id')->references('id')->on('users')->onDelete('set null');
