@@ -150,12 +150,12 @@
 
                                                     <span class="product-description" data-toggle="tooltip"
                                                         data-placement="top" title="{{ $data->body }}">
-                                                        <strong>
-                                                            @if ($data->mentionedUser)
-                                                                <span
-                                                                    class="badge badge-info">{{ $data->mentionedUser->name }}</span>
-                                                            @endif{{ Str::limit($data->body, 50) }}
-                                                        </strong>
+
+                                                        @if ($data->mentionedUser)
+                                                            <span
+                                                                class="badge badge-info">{{ $data->mentionedUser->name }}</span>
+                                                        @endif{!! Str::limit($data->body, 50) !!}
+
                                                     </span>
                                                 </div>
                                             </li>
