@@ -28,3 +28,8 @@ Route::get('/feedback/show', [FeedbackController::class, 'show'])->name('feedbac
 Route::post('/feedback/submit', [FeedbackController::class, 'submit'])->name('submit');
 Route::post('/feedback/{feedbackId}/comment/store', [CommentController::class, 'store'])
     ->name('feedback.comment.store');
+
+// In your routes/web.php file
+Route::get('googleLogin', [FeedbackController::class, 'googleLogin']);
+Route::get('auth/google/redirect', [FeedbackController::class, 'handleGoogleCallback']);
+

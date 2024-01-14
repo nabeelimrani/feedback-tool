@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FeedbackValidation;
 use App\Models\Feedback;
+use App\Models\User;
 use Auth;
+use Hash;
 use Illuminate\Http\Request;
+use Laravel\Socialite\Facades\Socialite;
 
 class FeedbackController extends Controller
 {
@@ -40,4 +43,35 @@ class FeedbackController extends Controller
         }
 
     }
+    public function googleLogin()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function handleGoogleCallback()
+    {
+        try {
+            $user = Socialite::driver('google')->user();
+            $findUser = User::where('email', $user->email)->first();
+
+            if ($findUser) {
+
+                Auth::login($findUser);
+            } else {
+
+                $newUser = new User;
+                $newUser->name = $user->name;
+                $newUser->email = $user->email;
+                $newUser->password = Hash::make(123123123);
+                $newUser->save();
+
+                Auth::login($newUser);
+            }
+
+            return redirect('/home');
+        } catch (Exception $e) {
+            dd($e->getMessage());
+        }
+    }
+
 }

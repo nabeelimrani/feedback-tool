@@ -54,6 +54,17 @@
                                     </button>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="d-grid">
+                                    <a href="{{ URL::to('googleLogin') }}">
+                                        <img src="https://onymos.com/wp-content/uploads/2020/10/google-signin-button.png"
+                                            width="410px" height="45px" style="margin-top: 12px"
+                                            alt="Sign in with Google">
+                                    </a>
+                                </div>
+                            </div>
+                           
                         </form>
 
                         @if (Route::has('password.request'))
