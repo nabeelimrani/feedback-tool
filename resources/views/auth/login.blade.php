@@ -20,10 +20,13 @@
                                     class="form-control @error('email') is-invalid @enderror" name="email"
                                     value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <span class="fas fa-envelope"></span>
+                                    <div class="" style="width: 40px; height: 38px;">
+                                        <lord-icon src="https://cdn.lordicon.com/zfmcashd.json" trigger="hover"
+                                            style="width: 70px;">
+                                        </lord-icon>
                                     </div>
                                 </div>
+
                                 @error('email')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -36,8 +39,12 @@
                                     class="form-control @error('password') is-invalid @enderror" name="password" required
                                     autocomplete="current-password">
                                 <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <span class="fas fa-lock"></span>
+                                    <div class=""
+                                        style="width: 40px; height: 38px;
+                                        ">
+                                        <lord-icon src="https://cdn.lordicon.com/ccrgnftl.json" trigger="hover"
+                                            style="width: 70px;" class="text-danger">
+                                        </lord-icon>
                                     </div>
                                 </div>
                                 @error('password')
@@ -64,7 +71,7 @@
                                     </a>
                                 </div>
                             </div>
-                           
+
                         </form>
 
                         @if (Route::has('password.request'))

@@ -42,6 +42,9 @@
     <script src="{{ asset('fontawesome/js/fontawesome.min.js') }}"></script>
     <script src="{{ asset('fontawesome/js/all.min.js') }}"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </body>
 
 </html>
+
+
