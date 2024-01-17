@@ -41,6 +41,7 @@
     <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
     <script src="{{ asset('fontawesome/js/fontawesome.min.js') }}"></script>
     <script src="{{ asset('fontawesome/js/all.min.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </body>
 
 </html>

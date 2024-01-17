@@ -56,7 +56,8 @@
             <a href="{{ route('home') }}" class="brand-link d-flex align-items-center">
                 <img src="{{ asset('icon/feedback.png') }}" alt="Hassan Graphics & Printing"
                     class="img-fluid img-circle" width="50" height="50">
-                <b class="brand-text font-weight-bold ml-3" style="font-size: 22px;">Feedback Tool</b>
+                <b class="brand-text font-weight-bold ml-3"
+                    style="font-size: 22px;">{{ __('message.companyname') }}</b>
             </a>
             <div class="sidebar">
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -75,7 +76,7 @@
                             <a href="#" class="nav-link ">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Dashboard
+                                    {{ __('message.dashboard') }}
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -83,7 +84,7 @@
                                 <li class="nav-item">
                                     <a href="{{ url('/home') }}"
                                         class="nav-link {{ Request::is('home*') ? 'active' : ' ' }}">
-                                        <p>Home Page</p>
+                                        <p> {{ __('message.homepage') }}</p>
                                     </a>
                                 </li>
                             </ul>

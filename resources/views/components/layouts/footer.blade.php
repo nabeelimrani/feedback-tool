@@ -15,6 +15,7 @@
 <script src="{{ asset('frontend/dist/js/adminlte.min.js') }}"></script>
 <script src="{{ asset('fontawesome/js/fontawesome.min.js') }}"></script>
 <script src="{{ asset('fontawesome/js/all.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="{{ asset('frontend/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('frontend/plugins/jquery-validation/additional-methods.min.js') }}"></script>

@@ -10,15 +10,32 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Dashboard</h1>
+                        <h1 class="m-0 text-dark">@lang('message.dashboard')</h1>
+
                     </div>
                     <div class="col-sm-6">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb float-sm-right">
+                        <nav aria-label="breadcrumb" class="d-flex justify-content-end">
+                            <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                                <li class="breadcrumb-item dropdown">
+                                    <a class="dropdown-toggle" href="#" role="button" id="languageDropdown"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ strtoupper(app()->getLocale()) }}
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                                        <a class="dropdown-item"
+                                            href="{{ route('lang.switch', ['lang' => 'en']) }}">English</a>
+                                        <a class="dropdown-item"
+                                            href="{{ route('lang.switch', ['lang' => 'ur']) }}">Urdu</a>
+
+                                        <!-- Add more languages as needed -->
+                                    </div>
+                                </li>
                             </ol>
                         </nav>
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -161,7 +178,8 @@
                                             </li>
                                         @endforeach
                                         <div class="card-footer text-center">
-                                            <a href="{{ route('feedback.show') }}" class="uppercase">View All Comments</a>
+                                            <a href="{{ route('feedback.show') }}" class="uppercase">View All
+                                                Comments</a>
                                         </div>
                                     @else
                                         <b class="mt-3 p-2">No latest comments available.</b>

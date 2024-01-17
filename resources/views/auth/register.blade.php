@@ -73,7 +73,8 @@
                                     </div>
                                 </div>
                             </div>
-
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-primary btn-block">
                                     <i class="fa fa-user-plus me-2"></i> Register
