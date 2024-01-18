@@ -35,6 +35,5 @@ return [
         'client_secret' => env('GOOGLE_SECRET_ID'),
         'redirect' => 'http://localhost:8000/auth/google/redirect',
     ],
-   
 
 ];

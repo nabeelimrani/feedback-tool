@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');
 });
+// In your routes/web.php file
+Route::get('googleLogin', [FeedbackController::class, 'googleLogin']);
+Route::get('auth/google/redirect', [FeedbackController::class, 'handleGoogleCallback']);
 
 Auth::routes([
     'verify' => true,
@@ -50,9 +53,5 @@ Route::middleware(['verified'])->group(function () {
     Route::post('/feedback/submit', [FeedbackController::class, 'submit'])->name('submit');
     Route::post('/feedback/{feedbackId}/comment/store', [CommentController::class, 'store'])
         ->name('feedback.comment.store');
-
-    // In your routes/web.php file
-    Route::get('googleLogin', [FeedbackController::class, 'googleLogin']);
-    Route::get('auth/google/redirect', [FeedbackController::class, 'handleGoogleCallback']);
 
 });
