@@ -2,9 +2,7 @@
 
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FeedbackController;
-use App\Models\Comment;
-use App\Models\Feedback;
-use App\Models\User;
+use App\Http\Controllers\LangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,20 +29,20 @@ Auth::routes([
 
 Route::middleware(['verified'])->group(function () {
 
-    Route::get('/{lang}', function ($lang) {
-        App::setLocale($lang); // Use 'ur' as a string
-        $totaluser = User::count();
-        $totalfeedback = Feedback::count();
-        $feedbackdata = Feedback::latest()->take(4)->get();
-        $totalcomment = Comment::count();
-        $commentdata = Comment::latest()->take(4)->get();
-        return view('components.home')
-            ->with('commentdata', $commentdata)
-            ->with('totalcomment', $totalcomment)
-            ->with('feedbackdata', $feedbackdata)
-            ->with('totalfeedback', $totalfeedback)
-            ->with('totaluser', $totaluser);
-    })->name('lang.switch');
+    // Route::get('/{lang}', function ($lang) {
+    //     App::setLocale($lang); // Use 'ur' as a string
+    //     $totaluser = User::count();
+    //     $totalfeedback = Feedback::count();
+    //     $feedbackdata = Feedback::latest()->take(4)->get();
+    //     $totalcomment = Comment::count();
+    //     $commentdata = Comment::latest()->take(4)->get();
+    //     return view('components.home')
+    //         ->with('commentdata', $commentdata)
+    //         ->with('totalcomment', $totalcomment)
+    //         ->with('feedbackdata', $feedbackdata)
+    //         ->with('totalfeedback', $totalfeedback)
+    //         ->with('totaluser', $totaluser);
+    // })->name('lang.switch');
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -53,5 +51,8 @@ Route::middleware(['verified'])->group(function () {
     Route::post('/feedback/submit', [FeedbackController::class, 'submit'])->name('submit');
     Route::post('/feedback/{feedbackId}/comment/store', [CommentController::class, 'store'])
         ->name('feedback.comment.store');
+
+    Route::get('/lang/home', [LangController::class, 'index']);
+    Route::get('/lang/change', [LangController::class, 'change'])->name('changeLang');
 
 });

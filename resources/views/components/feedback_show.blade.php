@@ -2,7 +2,7 @@
 
 @section('main-section')
     @push('title')
-        <title>View Feedback - Feedback Tool</title>
+        <title>{{ GoogleTranslate::trans('View Feedback - Feedback Tool', app()->getLocale()) }}</title>
     @endpush
 
     <div class="content-wrapper">
@@ -10,15 +10,20 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Feedback Show</h1>
+                        <h1>{{ GoogleTranslate::trans('Feedback Show', app()->getLocale()) }}</h1>
                     </div>
                     <div class="col-sm-6">
                         <div class="d-flex justify-content-between align-items-center">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                                <li class="breadcrumb-item active"><a href="{{ route('feedback.show') }}">Feedback</a></li>
+                                <li class="breadcrumb-item"><a
+                                        href="{{ route('home') }}">{{ GoogleTranslate::trans('Home', app()->getLocale()) }}</a>
+                                </li>
+                                <li class="breadcrumb-item active"><a
+                                        href="{{ route('feedback.show') }}">{{ GoogleTranslate::trans('Feedback', app()->getLocale()) }}</a>
+                                </li>
                             </ol>
-                            <a href="{{ route('feedback') }}" class="btn btn-info">Add Feedback</a>
+                            <a href="{{ route('feedback') }}"
+                                class="btn btn-info">{{ GoogleTranslate::trans('Add Feedback', app()->getLocale()) }}</a>
                         </div>
                     </div>
                 </div>
@@ -33,7 +38,8 @@
                             @foreach ($feedback as $feedbackdata)
                                 <div class="card mb-3">
                                     <div class="card-header bg-primary text-white">
-                                        Feedback by: <strong>{{ $feedbackdata->user_name }}</strong>
+                                        {{ GoogleTranslate::trans('Feedback By', app()->getLocale()) }}
+                                        <strong>{{ $feedbackdata->user_name }}</strong>
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title"><strong>Title:</strong> {{ $feedbackdata->title }}</h5>

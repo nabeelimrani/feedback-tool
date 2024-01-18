@@ -116,6 +116,32 @@
                             </ul>
                         </li>
                     </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <form action="{{ route('changeLang') }}" method="post" class="p-2">
+                                @csrf
+                                <select class="form-select changeLang" onchange="this.form.submit()">
+                                    <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>
+                                        English</option>
+                                    <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' : '' }}>
+                                        French</option>
+                                    <option value="es" {{ session()->get('locale') == 'es' ? 'selected' : '' }}>
+                                        Spanish</option>
+                                    <option value="ur" {{ session()->get('locale') == 'ur' ? 'selected' : '' }}>
+                                        Urdu</option>
+                                    <option value="ar" {{ session()->get('locale') == 'ar' ? 'selected' : '' }}>
+                                        Arabic</option>
+                                    <option value="de" {{ session()->get('locale') == 'de' ? 'selected' : '' }}>
+                                        German</option>
+                                    <option value="it" {{ session()->get('locale') == 'it' ? 'selected' : '' }}>
+                                        Italian</option>
+                                    <option value="ja" {{ session()->get('locale') == 'ja' ? 'selected' : '' }}>
+                                        Japanese</option>
+                                    <!-- Add more languages as needed -->
+                                </select>
+                            </form>
+                        </li>
+                    </ul>
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item has-treeview menu-open">

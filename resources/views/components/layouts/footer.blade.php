@@ -28,6 +28,12 @@
 
 <!-- Include Trumbowyg JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/trumbowyg@2.25.1/dist/trumbowyg.min.js"></script>
+<script type="text/javascript">
+    var url = "{{ route('changeLang') }}";
+    $(".changeLang").change(function(event) {
+        window.location.href = url + "?lang=" + $(this).val();
+    });
+</script>
 </body>
 
 </html>

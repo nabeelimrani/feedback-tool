@@ -16,18 +16,34 @@
                     <div class="col-sm-6">
                         <nav aria-label="breadcrumb" class="d-flex justify-content-end">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                                <li class="breadcrumb-item"><a
+                                        href="{{ route('home') }}">{{ GoogleTranslate::trans('Home', app()->getLocale()) }}</a>
+                                </li>
+
+
                                 <li class="breadcrumb-item dropdown">
                                     <a class="dropdown-toggle" href="#" role="button" id="languageDropdown"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {{ strtoupper(app()->getLocale()) }}
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                                        <a class="dropdown-item"
-                                            href="{{ route('lang.switch', ['lang' => 'en']) }}">English</a>
-                                        <a class="dropdown-item"
-                                            href="{{ route('lang.switch', ['lang' => 'ur']) }}">Urdu</a>
-
+                                        <select class="form-select changeLang">
+                                            <option value="en"
+                                                {{ session()->get('locale') == 'en' ? 'selected' : ' ?>' }}>English
+                                            </option>
+                                            <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' : '' }}>
+                                                France
+                                            </option>
+                                            <option value="es" {{ session()->get('locale') == 'es' ? 'selected' : '' }}>
+                                                Spanish
+                                            </option>
+                                            <option value="ur" {{ session()->get('locale') == 'ur' ? 'selected' : '' }}>
+                                                Urdu
+                                            </option>
+                                            <option value="ar" {{ session()->get('locale') == 'ar' ? 'selected' : '' }}>
+                                                Arabic
+                                            </option>
+                                        </select>
                                         <!-- Add more languages as needed -->
                                     </div>
                                 </li>
@@ -48,9 +64,9 @@
                         <div class="small-box bg-info">
                             <div class="inner">
                                 @if (isset($totalfeedback))
-                                    <h3>{{ $totalfeedback }}</h3>
+                                    <h3>{{ GoogleTranslate::trans($totalfeedback, app()->getLocale()) }}</h3>
                                 @endif
-                                <p>Total Feedbacks</p>
+                                <p>{{ GoogleTranslate::trans('Total Feedbacks', app()->getLocale()) }}</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-chatbox"></i>
@@ -120,7 +136,9 @@
                                                     </a>
                                                     <span class="product-description" data-toggle="tooltip"
                                                         data-placement="top" title="{{ $data->description }}">
-                                                        <strong>{{ Str::limit($data->description, 50) }}</strong>
+                                                        <strong>
+                                                            {{ GoogleTranslate::trans(Str::limit($data->description, 50), app()->getLocale()) }}
+                                                        </strong>
                                                     </span>
                                                 </div>
                                             </li>

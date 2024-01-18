@@ -38,17 +38,20 @@
                                 <form action="{{ route('submit') }}" method="post">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="title">Title</label>
+                                        <label
+                                            for="title">{{ GoogleTranslate::trans('Title', app()->getLocale()) }}</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
                                             </div>
                                             <input type="text" name="title"
                                                 class="form-control @error('title') is-invalid @enderror"
-                                                placeholder="Enter title..." value="{{ old('title') }}">
+                                                placeholder="{{ GoogleTranslate::trans('Enter title...', app()->getLocale()) }}"
+                                                value="{{ old('title') }}">
                                         </div>
                                         @error('title')
-                                            <span class="text-danger">{{ $message }}</span>
+                                            <span
+                                                class="text-danger">{{ GoogleTranslate::trans($message, app()->getLocale()) }}</span>
                                         @enderror
                                     </div>
 
