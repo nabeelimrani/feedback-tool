@@ -5,7 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+    @include('meta::manager', [
+        'title' => 'Feedback Tool',
+        'description' => 'This is my Feedback Tool Project for IKONIC interview process',
+    ])
     @stack('title')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
     <link rel="icon" href="{{ asset('icon/feedback.png') }}">
