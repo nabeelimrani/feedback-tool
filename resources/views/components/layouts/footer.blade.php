@@ -6,7 +6,10 @@
         <a href="https://www.instagram.com/billu_badshaw/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
 
-    <strong>Copyright &copy; 2023-2024 <a href="{{ url('/home') }}">Feedback Tool</a>.</strong> All rights reserved.
+    <strong>{{ GoogleTranslate::trans('Copyright', app()->getLocale()) }} &copy;
+        {{ GoogleTranslate::trans('2023-2024', app()->getLocale()) }} <a
+            href="{{ url('/home') }}">{{ GoogleTranslate::trans('Feedback Tool', app()->getLocale()) }}
+        </a>.</strong>{{ GoogleTranslate::trans('All rights reserved.', app()->getLocale()) }}
 </footer>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>

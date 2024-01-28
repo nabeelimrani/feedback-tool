@@ -2,7 +2,7 @@
 
 @section('main-section')
     @push('title')
-        <title>Home - Feedback Tool</title>
+        <title>{{ GoogleTranslate::trans('Home - Feedback Tool', app()->getLocale()) }}</title>
     @endpush
 
     <div class="content-wrapper">
@@ -10,7 +10,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">@lang('message.dashboard')</h1>
+                        <h1 class="m-0 text-dark">{{ GoogleTranslate::trans('Dashboard', app()->getLocale()) }}</h1>
 
                     </div>
                     <div class="col-sm-6">
@@ -81,7 +81,7 @@
                                 @if (isset($totalcomment))
                                     <h3>{{ $totalcomment }}</h3>
                                 @endif
-                                <p>Total Comments</p>
+                                <p>{{ GoogleTranslate::trans('Total Comments', app()->getLocale()) }}</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-chatbubbles"></i>
@@ -96,7 +96,7 @@
                                 @if (isset($totaluser))
                                     <h3>{{ $totaluser }}</h3>
                                 @endif
-                                <p>Total Users</p>
+                                <p>{{ GoogleTranslate::trans('Total Users', app()->getLocale()) }}</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-person-stalker"></i>
@@ -110,7 +110,9 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-thumbs-up"></i>&nbsp;Recently Feedback</h3>
+                                <h3 class="card-title"><i
+                                        class="fas fa-thumbs-up"></i>&nbsp;{{ GoogleTranslate::trans('Recently Feedback', app()->getLocale()) }}
+                                </h3>
 
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -144,10 +146,12 @@
                                             </li>
                                         @endforeach
                                         <div class="card-footer text-center">
-                                            <a href="{{ route('feedback.show') }}" class="uppercase">View All Feedback</a>
+                                            <a href="{{ route('feedback.show') }}"
+                                                class="uppercase">{{ GoogleTranslate::trans('View All Feedback', app()->getLocale()) }}</a>
                                         </div>
                                     @else
-                                        <b class="mt-3 p-2">No latest feedback available.</b>
+                                        <b
+                                            class="mt-3 p-2">{{ GoogleTranslate::trans('No latest feedback available.', app()->getLocale()) }}</b>
                                     @endif
                                 </ul>
                             </div>
@@ -157,7 +161,9 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fas fa-comment"></i>&nbsp;Recently Comments</h3>
+                                <h3 class="card-title"><i
+                                        class="fas fa-comment"></i>&nbsp;{{ GoogleTranslate::trans('Recently Comments', app()->getLocale()) }}
+                                </h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                         <i class="fas fa-minus"></i>

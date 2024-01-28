@@ -36,7 +36,8 @@
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ route('home') }}" class="nav-link active">Home</a>
+                    <a href="{{ route('home') }}"
+                        class="nav-link active">{{ GoogleTranslate::trans('Home', app()->getLocale()) }}</a>
                 </li>
             </ul>
             <ul class="nav nav-pills nav-sidebar ml-auto" data-widget="treeview" role="menu" data-accordion="false">
@@ -44,7 +45,7 @@
                     <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-power-off"></i>
-                        <p>Logout</p>
+                        <p>{{ GoogleTranslate::trans('Logout', app()->getLocale()) }}</p>
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
@@ -57,7 +58,7 @@
                 <img src="{{ asset('icon/feedback.png') }}" alt="Hassan Graphics & Printing"
                     class="img-fluid img-circle" width="50" height="50">
                 <b class="brand-text font-weight-bold ml-3"
-                    style="font-size: 22px;">{{ __('message.companyname') }}</b>
+                    style="font-size: 22px;">{{ GoogleTranslate::trans('Feedback Tool', app()->getLocale()) }}</b>
             </a>
             <div class="sidebar">
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -66,7 +67,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="" class="d-block">{{ Auth::user()->name }}</a>
+                        <a href=""
+                            class="d-block">{{ GoogleTranslate::trans(Auth::user()->name, app()->getLocale()) }}</a>
                     </div>
                 </div>
                 <nav class="mt-2">
@@ -76,7 +78,7 @@
                             <a href="#" class="nav-link ">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    {{ __('message.dashboard') }}
+                                    {{ GoogleTranslate::trans('Dashboard', app()->getLocale()) }}
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -84,7 +86,7 @@
                                 <li class="nav-item">
                                     <a href="{{ url('/home') }}"
                                         class="nav-link {{ Request::is('home*') ? 'active' : ' ' }}">
-                                        <p> {{ __('message.homepage') }}</p>
+                                        <p> {{ GoogleTranslate::trans('Home Page', app()->getLocale()) }}</p>
                                     </a>
                                 </li>
                             </ul>
@@ -96,7 +98,7 @@
                             <a href="#" class="nav-link ">
                                 <i class="nav-icon fas fa-pager"></i>
                                 <p>
-                                    Pages
+                                    {{ GoogleTranslate::trans('Pages', app()->getLocale()) }}
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -104,13 +106,13 @@
                                 <li class="nav-item">
                                     <a href="{{ route('feedback') }}"
                                         class="nav-link {{ Request::is('feedback') ? 'active' : ' ' }}">
-                                        <p>Submit Feedback</p>
+                                        <p>{{ GoogleTranslate::trans('Submit Feedback', app()->getLocale()) }}</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('feedback.show') }}"
                                         class="nav-link {{ Request::is('feedback/show') ? 'active' : ' ' }}">
-                                        <p>View Feedback</p>
+                                        <p>{{ GoogleTranslate::trans('View Feedback', app()->getLocale()) }}</p>
                                     </a>
                                 </li>
                             </ul>
@@ -148,7 +150,7 @@
                             <a href="#" class="nav-link ">
                                 <i class="nav-icon fas fa-cog"></i>
                                 <p>
-                                    Setting
+                                    {{ GoogleTranslate::trans('Setting', app()->getLocale()) }}
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -157,7 +159,7 @@
                                     <a class="nav-link {{ Request::is('logout*') ? 'active' : ' ' }}"
                                         href="{{ route('logout') }}"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <p>Logout</p>
+                                        <p>{{ GoogleTranslate::trans('Logout', app()->getLocale()) }}</p>
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                         class="d-none">
