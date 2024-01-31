@@ -43,6 +43,7 @@ class FeedbackController extends Controller
         }
 
     }
+    //google login//
     public function googleLogin()
     {
         return Socialite::driver('google')->redirect();
