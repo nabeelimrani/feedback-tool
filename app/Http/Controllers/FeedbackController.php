@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PostPublish;
 use App\Http\Requests\FeedbackValidation;
 use App\Models\Feedback;
 use App\Models\User;
@@ -28,6 +29,10 @@ class FeedbackController extends Controller
         $feedback->user_name = $user_name;
 
         $feedback->save();
+        $data = ['title' => $req->title, 'user' => $user_name];
+        event(new PostPublish($data));
+
+        event(new PostPublish($data));
         return redirect()->back()->with('success', "Feedback successfully Submitted");
     }
     public function show(Request $request)
