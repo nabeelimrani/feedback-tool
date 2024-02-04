@@ -139,7 +139,7 @@
                                                     <span class="product-description" data-toggle="tooltip"
                                                         data-placement="top" title="{{ $data->description }}">
                                                         <strong>
-                                                            {{ GoogleTranslate::trans(Str::limit($data->description, 50), app()->getLocale()) }}
+                                                            {{ GoogleTranslate::trans(Str::limit($data->scription, 50), app()->getLocale()) }}
                                                         </strong>
                                                     </span>
                                                 </div>
